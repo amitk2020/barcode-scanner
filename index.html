@@ -38,6 +38,7 @@
             const qrCode = jsQR(imageData.data, imageData.width, imageData.height);
             if (qrCode) {
                 console.log(qrCode.data);
+                window.location.href = qrCode.data;
             }
         }, 500);
 
