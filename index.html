@@ -20,11 +20,7 @@
 
     <script>
 
-        navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: { exact: "environment" }
-            }
-        }).then(function (stream) {
+        navigator.mediaDevices.getUserMedia({ video: true, facingMode: "environment" }).then(function (stream) {
             // The user granted access to the camera, so you can now start streaming video from it
             const video = document.createElement('video');
             video.srcObject = stream;
