@@ -19,8 +19,14 @@
 
 
     <script>
+        const videoConstraints = {};
+        videoConstraints.facingMode = 'environment';
 
-        navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+        const constraints = {
+            video: videoConstraints,
+            audio: false
+        };
+        navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
             // The user granted access to the camera, so you can now start streaming video from it
             const video = document.createElement('video');
             video.srcObject = stream;
